@@ -19,7 +19,7 @@ class MetroApp(ctk.CTk):
 
         self.grafo = grafo
         self.conexiones = conexiones 
-        self.title("Metro Santiago - Modo Interactivo")
+        self.title("Metro Santiago")
         self.geometry("1280x720")
 
         self.grid_columnconfigure(1, weight=1)
@@ -167,10 +167,10 @@ class MetroApp(ctk.CTk):
 
         if self.algo_var.get() == 1:
             ruta, costo = dijkstra(self.grafo, inicio, destino)
-            nombre_algo = "Dijkstra"
+            eleccion = "Dijkstra"
         else:
             ruta, costo = a_estrella(self.grafo, inicio, destino)
-            nombre_algo = "A*"
+            eleccion = "A*"
 
         for i in range(len(ruta) - 1):
             lat1, lon1 = self.grafo[ruta[i]]['coordenadas']
@@ -189,7 +189,7 @@ class MetroApp(ctk.CTk):
         self.canvas.create_oval(xf-r, yf-r, xf+r, yf+r, fill="#ff0000", outline="#FFFFFF", width=2, tags="ruta")
 
         self.txt_info.delete("0.0", "end")
-        self.txt_info.insert("0.0", f"Algoritmo: {nombre_algo}\nDistancia: {costo/1000:.2f} km\n\nPasos:\n" + " -> ".join(ruta))
+        self.txt_info.insert("0.0", f"Algoritmo: {eleccion}\nDistancia: {costo/1000:.2f} km\n\nPasos:\n" + " -> ".join(ruta))
 
 
 def datos():
