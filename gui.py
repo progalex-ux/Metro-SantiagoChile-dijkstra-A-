@@ -162,7 +162,6 @@ class MetroApp(ctk.CTk):
         inicio = self.combo_inicio.get()
         destino = self.combo_destino.get()
         if inicio not in self.grafo or destino not in self.grafo: return
-
         self.canvas.delete("ruta")
 
         if self.algo_var.get() == 1:
