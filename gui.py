@@ -4,13 +4,13 @@ from dijkstra import dijkstra
 from Astar import a_estrella
 
 LINEAS = {
-    "L1": "#E4222B",  # Rojo
-    "L2": "#FFD000",  # Amarillo
-    "L3": "#8B5226",  # Café
-    "L4": "#002A8F",  # Azul Oscuro
-    "L4A": "#008CC5", # Celeste
-    "L5": "#00A859",  # Verde
-    "L6": "#B065A9"   # Morado
+    "L1": "#E4222B",  
+    "L2": "#FFD000", 
+    "L3": "#8B5226", 
+    "L4": "#002A8F", 
+    "L4A": "#008CC5", 
+    "L5": "#00A859",  
+    "L6": "#B065A9"   
 }
 
 class MetroApp(ctk.CTk):
